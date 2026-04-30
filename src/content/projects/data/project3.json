@@ -1,0 +1,12 @@
+{
+    "id": "project-3",
+    "title": "E-commerce UI",
+    "description": "Frontend for an e-commerce platform with optimized UX flow.",
+    "tech": [
+        "React",
+        "Tailwind"
+    ],
+    "featured": false,
+    "result": "Increased conversion-focused UI clarity",
+    "slug": "ecommerce-ui"
+}

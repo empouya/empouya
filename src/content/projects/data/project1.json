@@ -1,0 +1,13 @@
+{
+    "id": "project-1",
+    "title": "Portfolio Website",
+    "description": "A modern developer portfolio built with Next.js and Tailwind CSS.",
+    "tech": [
+        "Next.js",
+        "Tailwind",
+        "TypeScript"
+    ],
+    "featured": true,
+    "result": "Improved personal branding and recruiter visibility",
+    "slug": "portfolio-website"
+}

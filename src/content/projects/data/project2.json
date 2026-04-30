@@ -1,0 +1,13 @@
+{
+    "id": "project-2",
+    "title": "Task Management App",
+    "description": "A full-stack task manager with authentication and real-time updates.",
+    "tech": [
+        "React",
+        "Node.js",
+        "MongoDB"
+    ],
+    "featured": true,
+    "result": "Improved productivity tracking for users",
+    "slug": "task-manager"
+}

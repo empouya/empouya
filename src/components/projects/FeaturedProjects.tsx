@@ -13,7 +13,7 @@ export default function FeaturedProjects() {
                     <Link
                         key={project.id}
                         href={`/projects/${project.slug}`}
-                        className="border rounded p-4 hover:bg-gray-50 transition"
+                        className="border rounded p-4 transition hover:scale-[1.02] hover:shadow-sm"
                     >
                         <h3 className="font-semibold">{project.title}</h3>
                         <p className="text-sm text-gray-600 mt-2">

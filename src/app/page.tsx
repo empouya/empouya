@@ -1,7 +1,13 @@
+import Hero from "@/components/hero/Hero";
+import FeaturedProjects from "@/components/projects/FeaturedProjects";
+import AboutPreview from "@/components/sections/AboutPreview";
+
 export default function Home() {
   return (
-    <main className="p-8">
-      <h1 className="text-3xl font-bold">Home</h1>
+    <main>
+      <Hero />
+      <FeaturedProjects />
+      <AboutPreview />
     </main>
   );
 }

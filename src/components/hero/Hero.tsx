@@ -17,11 +17,11 @@ export default function Hero() {
                     </p>
 
                     <h1 className="mt-4 text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl md:text-7xl">
-                        {profile.role}
+                        {profile.cv.title}
                     </h1>
 
                     <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                        {profile.tagline}
+                        {profile.cv.summary}
                     </p>
 
                     <div className="mt-8 flex flex-wrap gap-4">

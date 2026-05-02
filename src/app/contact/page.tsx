@@ -13,7 +13,7 @@ export default function ContactPage() {
                 />
 
                 <div className="rounded-[28px] border border-slate-200/80 bg-white/80 p-8 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
-                    <div className="grid gap-6 md:grid-cols-3">
+                    <div className="grid gap-6 md:grid-cols-2">
                         <div>
                             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
                                 Email
@@ -23,6 +23,27 @@ export default function ContactPage() {
                                 className="mt-2 inline-block break-all text-slate-900 underline"
                             >
                                 {profile.contact.email}
+                            </a>
+                        </div>
+
+                        <div>
+                            <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                                Location
+                            </h2>
+                            <p className="mt-2 text-slate-900">{profile.contact.location}</p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                                LinkedIn
+                            </h2>
+                            <a
+                                href={profile.contact.linkedin}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="mt-2 inline-block break-all text-slate-900 underline"
+                            >
+                                {profile.contact.linkedin}
                             </a>
                         </div>
 
@@ -42,15 +63,15 @@ export default function ContactPage() {
 
                         <div>
                             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-                                LinkedIn
+                                GitHub Secondary
                             </h2>
                             <a
-                                href={profile.contact.linkedin}
+                                href={profile.contact.githubSecondary}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="mt-2 inline-block break-all text-slate-900 underline"
                             >
-                                {profile.contact.linkedin}
+                                {profile.contact.githubSecondary}
                             </a>
                         </div>
                     </div>

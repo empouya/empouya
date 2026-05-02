@@ -1,6 +1,14 @@
 import Section from "@/components/sections/Section";
 import { profile } from "@/content/site/profile";
 import SectionHeading from "@/components/ui/SectionHeading";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About",
+    description:
+        "Learn more about Eid Mohammad Ahmadi, a Full Stack Engineer focused on Python, React, and scalable systems.",
+};
+
 
 export default function AboutPage() {
     return (

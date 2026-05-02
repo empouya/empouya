@@ -1,6 +1,13 @@
 import Section from "@/components/sections/Section";
 import { profile } from "@/content/site/profile";
 import SectionHeading from "@/components/ui/SectionHeading";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Contact",
+    description:
+        "Contact Eid Mohammad Ahmadi for collaboration, freelance opportunities, and full stack engineering roles.",
+};
 
 export default function ContactPage() {
     return (

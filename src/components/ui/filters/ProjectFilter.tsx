@@ -1,25 +1,37 @@
 "use client";
 
+import {
+    projectFilterOptions,
+    type ProjectFilterValue,
+} from "@/components/ui/filters/filter-options";
+
 type Props = {
-    selected: string;
-    setSelected: (value: string) => void;
+    selected: ProjectFilterValue;
+    setSelected: (value: ProjectFilterValue) => void;
 };
 
 export default function ProjectFilter({ selected, setSelected }: Props) {
-    const filters = ["all", "featured", "react", "next"];
-
     return (
-        <div className="flex gap-2 flex-wrap mb-4">
-            {filters.map((filter) => (
-                <button
-                    key={filter}
-                    onClick={() => setSelected(filter)}
-                    className={`px-3 py-1 border rounded text-sm ${selected === filter ? "bg-black text-white" : ""
-                        }`}
-                >
-                    {filter}
-                </button>
-            ))}
+        <div className="mb-6 flex flex-wrap gap-2">
+            {projectFilterOptions.map((filter) => {
+                const active = selected === filter.value;
+
+                return (
+                    <button
+                        key={filter.value}
+                        type="button"
+                        onClick={() => setSelected(filter.value)}
+                        className={[
+                            "rounded-full border px-3 py-1.5 text-sm transition",
+                            active
+                                ? "border-amber-600 bg-amber-600 text-white"
+                                : "bg-[var(--surface)] hover:border-amber-500 hover:text-amber-700",
+                        ].join(" ")}
+                    >
+                        {filter.label}
+                    </button>
+                );
+            })}
         </div>
     );
 }

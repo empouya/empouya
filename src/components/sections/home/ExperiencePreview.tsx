@@ -1,40 +1,27 @@
 import Section from "@/components/sections/Section";
 import { profile } from "@/content/site/profile";
+import SectionHeading from "@/components/ui/SectionHeading";
 
-export default function SkillsPreview() {
-    const groups = [
-        { title: "Frontend", items: profile.skills.frontend },
-        { title: "Backend", items: profile.skills.backend },
-        { title: "Tools", items: profile.skills.tools },
-    ];
-
+export default function ExperiencePreview() {
     return (
-        <Section>
-            <div className="space-y-8">
-                <div>
-                    <h2 className="text-2xl font-bold">Skills</h2>
-                    <p className="mt-2 max-w-2xl text-gray-600">
-                        Technologies and tools I use to build modern web applications.
-                    </p>
-                </div>
+        <Section className="border-t border-slate-200/70">
+            <div className="space-y-10">
+                <SectionHeading
+                    eyebrow="Progress"
+                    title="Experience & Achievements"
+                    description="A concise view of the direction, standards, and project momentum behind my work."
+                />
 
-                <div className="grid gap-6 md:grid-cols-3">
-                    {groups.map((group) => (
-                        <div key={group.title} className="rounded border p-4">
-                            <h3 className="text-lg font-semibold">{group.title}</h3>
-                            <div className="mt-4 flex flex-wrap gap-2">
-                                {group.items.map((item) => (
-                                    <span
-                                        key={item}
-                                        className="rounded border px-2 py-1 text-sm text-gray-700"
-                                    >
-                                        {item}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
+                <ul className="grid gap-4 md:grid-cols-3">
+                    {profile.achievements.map((item) => (
+                        <li
+                            key={item}
+                            className="rounded-2xl border border-slate-200/80 bg-white/80 p-5 text-slate-700 shadow-[0_10px_30px_rgba(15,23,42,0.04)]"
+                        >
+                            {item}
+                        </li>
                     ))}
-                </div>
+                </ul>
             </div>
         </Section>
     );

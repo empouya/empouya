@@ -1,26 +1,32 @@
 import Link from "next/link";
 import Section from "@/components/sections/Section";
 import { profile } from "@/content/site/profile";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function AboutPreview() {
     return (
-        <Section className="border-t">
-            <h2 className="mb-4 text-2xl font-bold">About Me</h2>
+        <Section className="border-t border-slate-200/70">
+            <SectionHeading
+                eyebrow="About"
+                title="A developer focused on clarity, performance, and long-term maintainability"
+                description={profile.shortIntro}
+            />
 
-            <p className="max-w-2xl text-gray-600">{profile.shortIntro}</p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-8 flex flex-wrap gap-3">
                 {profile.traits.map((trait) => (
                     <span
                         key={trait}
-                        className="rounded border px-3 py-1 text-sm text-gray-700"
+                        className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700"
                     >
                         {trait}
                     </span>
                 ))}
             </div>
 
-            <Link href="/about" className="mt-4 inline-block underline">
+            <Link
+                href="/about"
+                className="mt-6 inline-flex text-sm font-medium text-amber-700 hover:text-amber-800"
+            >
                 Learn more →
             </Link>
         </Section>

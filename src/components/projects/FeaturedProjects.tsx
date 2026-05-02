@@ -1,6 +1,6 @@
 import { getFeaturedProjects } from "@/content/projects";
-import Link from "next/link";
 import Section from "@/components/sections/Section";
+import ProjectCard from "@/components/projects/ProjectCard";
 
 export default function FeaturedProjects() {
     const projects = getFeaturedProjects();
@@ -13,14 +13,7 @@ export default function FeaturedProjects() {
 
             <div className="grid gap-4 md:grid-cols-2">
                 {projects.map((project) => (
-                    <Link
-                        key={project.id}
-                        href={`/projects/${project.slug}`}
-                        className="rounded border p-4 transition hover:scale-[1.02] hover:shadow-sm"
-                    >
-                        <h3 className="font-semibold">{project.title}</h3>
-                        <p className="mt-2 text-sm text-gray-600">{project.description}</p>
-                    </Link>
+                    <ProjectCard key={project.id} project={project} />
                 ))}
             </div>
         </Section>

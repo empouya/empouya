@@ -1,13 +1,5 @@
-import Hero from "@/components/hero/Hero";
-import FeaturedProjects from "@/components/projects/FeaturedProjects";
-import AboutPreview from "@/components/sections/AboutPreview";
+import HomePage from "@/components/sections/home/HomePage";
 
-export default function Home() {
-  return (
-    <main>
-      <Hero />
-      <FeaturedProjects />
-      <AboutPreview />
-    </main>
-  );
+export default function Page() {
+  return <HomePage />;
 }

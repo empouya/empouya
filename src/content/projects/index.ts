@@ -4,20 +4,23 @@ import project3 from "./data/project3.json";
 
 export type Project = {
     id: string;
+    slug: string;
     title: string;
     description: string;
     tech: string[];
+    image: string;
+    github: string;
+    live: string;
     featured: boolean;
-    result: string;
-    slug: string;
+    results: string[];
 };
 
 export const projects: Project[] = [project1, project2, project3];
 
 export function getFeaturedProjects() {
-    return projects.filter((p) => p.featured);
+    return projects.filter((project) => project.featured);
 }
 
 export function getProjectBySlug(slug: string) {
-    return projects.find((p) => p.slug === slug);
+    return projects.find((project) => project.slug === slug);
 }

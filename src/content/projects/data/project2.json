@@ -1,5 +1,6 @@
 {
     "id": "project-2",
+    "slug": "task-manager",
     "title": "Task Management App",
     "description": "A full-stack task manager with authentication and real-time updates.",
     "tech": [
@@ -7,7 +8,13 @@
         "Node.js",
         "MongoDB"
     ],
+    "image": "/projects/task-manager/cover.jpg",
+    "github": "https://github.com/yourusername/task-manager",
+    "live": "https://task-manager-demo.example.com",
     "featured": true,
-    "result": "Improved productivity tracking for users",
-    "slug": "task-manager"
+    "results": [
+        "Improved productivity tracking for users with a structured task workflow",
+        "Delivered authenticated user flows and real-time status visibility",
+        "Organized task operations into a maintainable full-stack architecture"
+    ]
 }

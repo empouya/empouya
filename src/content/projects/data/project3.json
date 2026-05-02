@@ -1,12 +1,19 @@
 {
     "id": "project-3",
+    "slug": "ecommerce-ui",
     "title": "E-commerce UI",
     "description": "Frontend for an e-commerce platform with optimized UX flow.",
     "tech": [
         "React",
-        "Tailwind"
+        "Tailwind CSS"
     ],
+    "image": "/projects/ecommerce-ui/cover.jpg",
+    "github": "https://github.com/yourusername/ecommerce-ui",
+    "live": "https://ecommerce-ui-demo.example.com",
     "featured": false,
-    "result": "Increased conversion-focused UI clarity",
-    "slug": "ecommerce-ui"
+    "results": [
+        "Increased conversion-focused UI clarity through improved product page structure",
+        "Built a reusable frontend component approach for commerce interfaces",
+        "Improved browsing flow and visual hierarchy across core shopping screens"
+    ]
 }

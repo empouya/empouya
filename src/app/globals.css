@@ -1,14 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fffdf8;
+  --background: #fcfcf9;
   --foreground: #172033;
-  --muted: #5a6478;
-  --border: rgba(23, 32, 51, 0.1);
-  --surface: rgba(255, 255, 255, 0.78);
-  --surface-strong: #ffffff;
+  --muted: #5f6b7a;
+  --border: #e5e7eb;
+  --surface: #ffffff;
   --primary: #d97706;
-  --primary-soft: #fef3c7;
+  --primary-foreground: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --background: #0f172a;
+  --foreground: #e5e7eb;
+  --muted: #94a3b8;
+  --border: #1e293b;
+  --surface: #111827;
+  --primary: #f59e0b;
+  --primary-foreground: #0f172a;
 }
 
 @theme inline {
@@ -17,16 +26,12 @@
 }
 
 html {
-  background:
-    radial-gradient(circle at top left, rgba(251, 191, 36, 0.14), transparent 32%),
-    radial-gradient(circle at top right, rgba(148, 163, 184, 0.12), transparent 28%),
-    var(--background);
-  scroll-behavior: smooth;
+  background-color: var(--background);
 }
 
 body {
   min-height: 100vh;
-  background: transparent;
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
@@ -37,19 +42,17 @@ body {
 }
 
 ::selection {
-  background: rgba(217, 119, 6, 0.18);
+  background: rgba(217, 119, 6, 0.2);
   color: var(--foreground);
 }
 
 a,
 button {
   transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease,
-    opacity 180ms ease,
-    transform 180ms ease,
-    box-shadow 180ms ease;
+    color 140ms ease,
+    background-color 140ms ease,
+    border-color 140ms ease,
+    opacity 140ms ease;
 }
 
 button {

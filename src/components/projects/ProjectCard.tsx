@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Project } from "@/lib/projects";
-import { siteTheme } from "@/lib/site-theme";
 
 type ProjectCardProps = {
     project: Project;
@@ -10,18 +9,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     return (
         <Link
             href={`/projects/${project.slug}`}
-            className="group block rounded-2xl border border-slate-200/80 bg-white/80 p-5 shadow-[0_10px_30px_rgba(15,23,42,0.04)] backdrop-blur-sm hover:-translate-y-1 hover:border-amber-300 hover:shadow-[0_18px_40px_rgba(217,119,6,0.12)]"
+            className="group block rounded-2xl border bg-[var(--surface)] p-5 transition duration-200 ease-out hover:-translate-y-1 hover:border-amber-500 hover:shadow-md"
         >
-            <div
-                className={`mb-5 h-32 rounded-xl border border-amber-100 bg-gradient-to-br ${siteTheme.gradients.card}`}
-            />
+            <div className="mb-5 h-32 rounded-xl border bg-amber-50 transition duration-200 ease-out group-hover:bg-amber-100" />
 
             <div className="space-y-4">
                 <div>
-                    <h3 className="text-lg font-semibold text-slate-900 group-hover:text-amber-700">
+                    <h3 className="text-lg font-semibold transition-colors duration-200 group-hover:text-amber-700">
                         {project.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                    <p className="mt-2 text-sm leading-6 text-[var(--muted)]">
                         {project.description}
                     </p>
                 </div>
@@ -30,14 +27,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     {project.tech.map((item) => (
                         <span
                             key={item}
-                            className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-700"
+                            className="rounded-full border px-2.5 py-1 text-xs font-medium"
                         >
                             {item}
                         </span>
                     ))}
                 </div>
 
-                <ul className="space-y-2 text-sm text-slate-600">
+                <ul className="space-y-2 text-sm text-[var(--muted)]">
                     {project.results.slice(0, 2).map((result) => (
                         <li key={result}>- {result}</li>
                     ))}

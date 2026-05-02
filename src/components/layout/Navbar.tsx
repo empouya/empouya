@@ -11,20 +11,16 @@ const navLinks = [
 
 export default function Navbar() {
     return (
-        <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/70 backdrop-blur-xl">
-            <Container as="nav" className="flex min-h-18 items-center justify-between gap-6">
-                <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
+        <header className="sticky top-0 z-40 border-b bg-[var(--background)]/95">
+            <Container as="nav" className="flex min-h-16 items-center justify-between gap-6">
+                <Link href="/" className="text-lg font-semibold tracking-tight">
                     MyPortfolio
                 </Link>
 
                 <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-4 text-sm text-slate-600 sm:gap-6 sm:text-[15px]">
+                    <div className="flex items-center gap-4 text-sm sm:gap-6 sm:text-[15px]">
                         {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className="hover:text-slate-900"
-                            >
+                            <Link key={link.href} href={link.href} className="hover:opacity-70">
                                 {link.label}
                             </Link>
                         ))}

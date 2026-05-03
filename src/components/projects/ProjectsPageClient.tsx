@@ -16,25 +16,34 @@ export default function ProjectsPageClient() {
         if (selected === "featured") return project.featured;
         if (selected === "react") return project.tech.includes("React");
         if (selected === "next") return project.tech.includes("Next.js");
+        if (selected === "python") return project.tech.some(t =>
+            ["Python", "Django", "FastAPI"].includes(t)
+        );
         return true;
     });
 
     return (
         <Section>
-            <div className="space-y-8">
-                <SectionHeading
-                    eyebrow="Projects"
-                    title="Project Library"
-                    description="Browse selected work and filter projects by focus area."
-                />
+            <SectionHeading
+                eyebrow="Projects"
+                title="Project Library"
+                description="Browse selected work and filter projects by focus area."
+            />
 
+            <div className="mt-8">
                 <ProjectFilter selected={selected} setSelected={setSelected} />
+            </div>
 
-                <div className="grid gap-4 md:grid-cols-2">
-                    {filtered.map((project) => (
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+                {filtered.length > 0 ? (
+                    filtered.map((project) => (
                         <ProjectCard key={project.id} project={project} />
-                    ))}
-                </div>
+                    ))
+                ) : (
+                    <div className="col-span-2 rounded-2xl border border-border bg-card p-12 text-center">
+                        <p className="text-muted-foreground">No projects found matching this filter.</p>
+                    </div>
+                )}
             </div>
         </Section>
     );

@@ -1,4 +1,4 @@
-export type ProjectFilterValue = "all" | "featured" | "react" | "next";
+export type ProjectFilterValue = "all" | "featured" | "react" | "next" | "python";
 
 export const projectFilterOptions: {
     value: ProjectFilterValue;
@@ -8,4 +8,5 @@ export const projectFilterOptions: {
         { value: "featured", label: "Featured" },
         { value: "react", label: "React" },
         { value: "next", label: "Next.js" },
+        { value: "python", label: "Python" },
     ];

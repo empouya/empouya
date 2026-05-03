@@ -1,45 +1,143 @@
-import FadeIn from "@/components/animations/FadeIn";
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import Section from "@/components/sections/Section";
 import { profile } from "@/content/site/profile";
-import { siteTheme } from "@/lib/site-theme";
+import { ArrowRightIcon, GithubIcon, LinkedinIcon } from "@/components/ui/icons";
 
 export default function Hero() {
     return (
-        <FadeIn>
-            <Section className="relative flex min-h-[78vh] items-center overflow-hidden">
-                <div
-                    className={`absolute inset-0 -z-10 bg-gradient-to-br ${siteTheme.gradients.hero}`}
-                />
-                <div className="max-w-3xl">
-                    <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
-                        {profile.name}
-                    </p>
+        <Section className="relative flex min-h-[85vh] items-center overflow-hidden">
+            {/* Background gradient */}
+            <div className="pointer-events-none absolute inset-0 -z-10">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-background" />
+                <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-accent/10 blur-3xl" />
+                <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-accent/5 blur-3xl" />
+            </div>
 
-                    <h1 className="mt-4 text-5xl font-semibold tracking-tight text-slate-950 sm:text-6xl md:text-7xl">
-                        {profile.cv.title}
-                    </h1>
+            <div className="grid w-full gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+                {/* Left content */}
+                <div className="max-w-2xl">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+                            <span className="relative flex h-2 w-2">
+                                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+                                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+                            </span>
+                            {profile.availability.status}
+                        </span>
+                    </motion.div>
 
-                    <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                        {profile.cv.summary}
-                    </p>
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
+                    >
+                        <span className="block">{profile.name.split(" ")[0]}</span>
+                        <span className="block text-muted-foreground">{profile.name.split(" ").slice(1).join(" ")}</span>
+                    </motion.h1>
 
-                    <div className="mt-8 flex flex-wrap gap-4">
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="mt-4 text-xl font-medium text-accent"
+                    >
+                        {profile.role}
+                    </motion.p>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="mt-6 text-lg leading-8 text-muted-foreground text-pretty"
+                    >
+                        {profile.headline}
+                    </motion.p>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="mt-8 flex flex-wrap items-center gap-4"
+                    >
                         <Link
                             href="/projects"
-                            className="rounded-full border border-amber-700 bg-amber-600 px-5 py-3 text-sm font-medium text-white shadow-sm hover:-translate-y-0.5 hover:bg-amber-700"
+                            className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
                         >
                             View Projects
+                            <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Link>
                         <Link
                             href="/contact"
-                            className="rounded-full border border-slate-300 bg-white/80 px-5 py-3 text-sm font-medium text-slate-800 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-white"
+                            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:border-accent hover:text-accent"
                         >
                             Contact Me
                         </Link>
-                    </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.5 }}
+                        className="mt-8 flex items-center gap-4"
+                    >
+                        <a
+                            href={profile.contact.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-muted-foreground transition-colors hover:text-foreground"
+                            aria-label="GitHub"
+                        >
+                            <GithubIcon className="h-6 w-6" />
+                        </a>
+                        <a
+                            href={profile.contact.linkedin}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-muted-foreground transition-colors hover:text-foreground"
+                            aria-label="LinkedIn"
+                        >
+                            <LinkedinIcon className="h-6 w-6" />
+                        </a>
+                    </motion.div>
                 </div>
-            </Section>
-        </FadeIn>
+
+                {/* Right content - Stats/Bento */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="hidden lg:block"
+                >
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="col-span-2 rounded-2xl border border-border bg-card p-6 shadow-sm">
+                            <p className="text-sm font-medium text-muted-foreground">Quick Bio</p>
+                            <p className="mt-2 text-sm leading-relaxed text-foreground">
+                                {profile.shortIntro}
+                            </p>
+                        </div>
+                        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                            <p className="text-4xl font-bold text-accent">{profile.stats.yearsExperience}</p>
+                            <p className="mt-1 text-sm text-muted-foreground">Years Experience</p>
+                        </div>
+                        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                            <p className="text-4xl font-bold text-accent">{profile.stats.projectsCompleted}</p>
+                            <p className="mt-1 text-sm text-muted-foreground">Projects Completed</p>
+                        </div>
+                        <div className="col-span-2 rounded-2xl border border-border bg-card p-6 shadow-sm">
+                            <p className="text-sm font-medium text-muted-foreground">Location</p>
+                            <p className="mt-1 text-lg font-semibold text-foreground">{profile.contact.location}</p>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
+        </Section>
     );
 }

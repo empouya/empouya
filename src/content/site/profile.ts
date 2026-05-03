@@ -1,6 +1,7 @@
 export const profile = {
     name: "EID MOHAMMAD AHMADI",
     role: "Full Stack Engineer",
+    headline: "I build scalable systems that solve real problems",
     tagline:
         "Full Stack Engineer (Python, React) focused on AI-driven systems, scalable applications, backend API design, and maintainable frontend architecture.",
     shortIntro:
@@ -21,6 +22,7 @@ export const profile = {
         frontend: ["React", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
         backend: ["Python", "Django", "Django REST Framework", "FastAPI", "Node.js", "REST APIs"],
         tools: ["Git", "Linux", "Docker", "PostgreSQL", "MySQL", "Redis"],
+        ai: ["Machine Learning", "Data Pipelines", "LLM Concepts", "RAG Basics"],
     },
     achievements: [
         "Designed and developed full-stack applications using Python and React with end-to-end feature delivery",
@@ -35,6 +37,15 @@ export const profile = {
     ],
     philosophy:
         "Useful software should be scalable, maintainable, and designed with clear architecture from the start.",
+    stats: {
+        yearsExperience: "3+",
+        projectsCompleted: "10+",
+        technologiesUsed: "15+",
+    },
+    availability: {
+        status: "Open to opportunities",
+        type: "Full-time / Freelance",
+    },
     contact: {
         email: "empouya03@gmail.com",
         github: "https://github.com/empouya",
@@ -74,14 +85,22 @@ export const profile = {
             { label: "Languages", value: "Python, JavaScript, TypeScript, Java, SQL, C/C++" },
             { label: "Backend", value: "Django, Django REST Framework, FastAPI, Node.js, REST APIs" },
             { label: "Frontend", value: "React, Next.js, HTML, CSS, Tailwind CSS" },
-            { label: "AI & Data", value: "Machine Learning, data processing pipelines, clustering, neural networks, LLM concepts, RAG basics" },
+            {
+                label: "AI & Data",
+                value:
+                    "Machine Learning, data processing pipelines, clustering, neural networks, LLM concepts, RAG basics",
+            },
             { label: "Databases", value: "PostgreSQL, MySQL, Redis" },
             { label: "Cloud & DevOps", value: "Docker, Kubernetes (familiar), cloud concepts (AWS/Azure basics)" },
             { label: "Tools", value: "Git, Linux" },
-            { label: "Concepts", value: "Scalable architecture, system design, clean architecture, API design, data modeling" },
+            {
+                label: "Concepts",
+                value: "Scalable architecture, system design, clean architecture, API design, data modeling",
+            },
         ],
         experience: {
-            role: "Full Stack / Backend Developer (Independent Projects)",
+            role: "Full Stack / Backend Developer",
+            company: "Independent Projects",
             date: "2022 - Present",
             bullets: [
                 "Designed and developed full-stack applications using Python (Django, DRF) and React, delivering end-to-end features and user-facing functionality",

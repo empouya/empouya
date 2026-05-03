@@ -11,11 +11,6 @@ type MobileMenuProps = {
 
 export default function MobileMenu({ links }: MobileMenuProps) {
     const [open, setOpen] = useState(false);
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(min-width: 768px)");
@@ -42,8 +37,10 @@ export default function MobileMenu({ links }: MobileMenuProps) {
         };
     }, [open]);
 
+    const canUsePortal = typeof document !== "undefined";
+
     const menuOverlay =
-        mounted && open
+        canUsePortal && open
             ? createPortal(
                 <div className="fixed inset-0 z-[100] md:hidden">
                     <div
@@ -51,7 +48,7 @@ export default function MobileMenu({ links }: MobileMenuProps) {
                         onClick={() => setOpen(false)}
                         aria-hidden="true"
                     />
-                    <div className="absolute inset-x-0 top-16 bottom-0 bg-white dark:bg-neutral-950 shadow-2xl">
+                    <div className="absolute inset-x-0 top-16 bottom-0 bg-white shadow-2xl dark:bg-neutral-950">
                         <nav className="flex h-full flex-col px-6 py-6">
                             {links.map((link) => (
                                 <Link

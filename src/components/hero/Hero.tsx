@@ -39,8 +39,8 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
                     >
-                        <span className="block">{profile.name.split(" ")[0]}</span>
-                        <span className="block text-muted-foreground">{profile.name.split(" ").slice(1).join(" ")}</span>
+                        <span className="block">{profile.name.split(" ")[0]} {profile.name.split(" ")[1]}</span>
+                        <span className="block text-muted-foreground">{profile.name.split(" ")[2]}</span>
                     </motion.h1>
 
                     <motion.p

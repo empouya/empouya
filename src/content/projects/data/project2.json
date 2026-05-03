@@ -1,20 +1,26 @@
 {
-    "id": "project-2",
-    "slug": "task-manager",
-    "title": "Task Management App",
-    "description": "A full-stack task manager with authentication and real-time updates.",
+    "id": "project-taskhive-backend",
+    "slug": "taskhive-backend",
+    "title": "TaskHive — Scalable Task Management Backend",
+    "description": "A production-style backend system for team-based project and task management, designed with strong domain modeling, clean architecture principles, and high test coverage.",
     "tech": [
-        "React",
-        "Node.js",
-        "MongoDB"
+        "Python",
+        "Django",
+        "Django REST Framework",
+        "PostgreSQL",
+        "Docker",
+        "Redis",
+        "Pytest"
     ],
-    "image": "/projects/task-manager/cover.jpg",
-    "github": "https://github.com/yourusername/task-manager",
-    "live": "https://task-manager-demo.example.com",
+    "image": "/projects/taskhive/cover.jpg",
+    "github": "https://github.com/empouya/task-hive",
+    "live": "",
     "featured": true,
     "results": [
-        "Improved productivity tracking for users with a structured task workflow",
-        "Delivered authenticated user flows and real-time status visibility",
-        "Organized task operations into a maintainable full-stack architecture"
+        "Designed a modular backend architecture with clear domain boundaries (teams, projects, tasks) to ensure scalability and maintainability",
+        "Implemented REST APIs with strict business logic enforcement, role-based access control, and stateless JWT authentication",
+        "Achieved ~96% test coverage with unit and integration tests, ensuring reliability of core business workflows",
+        "Built a production-ready environment using Docker, PostgreSQL, and structured logging with health checks",
+        "Handled complex data relationships and integrity constraints across multi-tenant team-based systems"
     ]
 }

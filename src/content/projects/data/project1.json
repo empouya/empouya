@@ -1,20 +1,25 @@
 {
-    "id": "project-1",
-    "slug": "portfolio-website",
-    "title": "Portfolio Website",
-    "description": "A modern developer portfolio built with Next.js and Tailwind CSS.",
+    "id": "project-rideflow",
+    "slug": "rideflow-distributed-system",
+    "title": "RideFlow — Event-Driven Distributed Backend Simulation",
+    "description": "A backend system simulating a ride-hailing platform using event-driven architecture and asynchronous service communication, designed to model scalable distributed systems.",
     "tech": [
-        "Next.js",
-        "Tailwind CSS",
-        "TypeScript"
+        "Python",
+        "Node.js",
+        "Microservices",
+        "Event-Driven Architecture",
+        "Docker",
+        "REST APIs"
     ],
-    "image": "/projects/portfolio-website/cover.jpg",
-    "github": "https://github.com/yourusername/portfolio-website",
-    "live": "https://yourusername.github.io/",
+    "image": "/projects/rideflow/cover.jpg",
+    "github": "https://github.com/empouya/rideflow",
+    "live": "",
     "featured": true,
     "results": [
-        "Created a scalable static portfolio architecture for long-term maintainability",
-        "Improved personal branding and recruiter visibility with a dedicated web presence",
-        "Established a reusable foundation for project storytelling and case-study growth"
+        "Designed an event-driven architecture to simulate real-world distributed systems with loosely coupled services",
+        "Implemented asynchronous workflows and inter-service communication patterns to improve scalability and resilience",
+        "Modeled complex system interactions such as ride requests, matching, and state transitions across services",
+        "Explored microservices design trade-offs including service boundaries, communication overhead, and fault tolerance",
+        "Built a system focused on scalability concepts rather than simple request-response APIs"
     ]
 }

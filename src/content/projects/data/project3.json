@@ -1,19 +1,22 @@
 {
-    "id": "project-3",
-    "slug": "ecommerce-ui",
-    "title": "E-commerce UI",
-    "description": "Frontend for an e-commerce platform with optimized UX flow.",
+    "id": "project-xv6",
+    "slug": "xv6-riscv-kernel",
+    "title": "XV6-RISC-V — Operating System Kernel Extensions",
+    "description": "Extended an educational operating system kernel (XV6) to deepen understanding of low-level systems, process management, and operating system design.",
     "tech": [
-        "React",
-        "Tailwind CSS"
+        "C",
+        "Operating Systems",
+        "RISC-V",
+        "Low-level Programming"
     ],
-    "image": "/projects/ecommerce-ui/cover.jpg",
-    "github": "https://github.com/yourusername/ecommerce-ui",
-    "live": "https://ecommerce-ui-demo.example.com",
+    "image": "/projects/xv6/cover.jpg",
+    "github": "https://github.com/empahmadi/xv6-riscv",
+    "live": "",
     "featured": false,
     "results": [
-        "Increased conversion-focused UI clarity through improved product page structure",
-        "Built a reusable frontend component approach for commerce interfaces",
-        "Improved browsing flow and visual hierarchy across core shopping screens"
+        "Worked at kernel level to understand process scheduling, memory management, and system calls",
+        "Modified and extended OS components to explore core operating system behaviors",
+        "Gained practical experience with low-level programming and hardware-software interaction",
+        "Strengthened understanding of concurrency, process lifecycle, and system resource management"
     ]
 }

@@ -7,27 +7,32 @@ export default function PersonalityPreview() {
     return (
         <FadeIn>
             <Section>
-                <div className="space-y-10">
-                    <SectionHeading
-                        eyebrow="Mindset"
-                        title="How I think about building software"
-                        description="I care about useful products, clear systems, and design decisions that make software easier to trust and use."
-                    />
+                <SectionHeading
+                    eyebrow="Mindset"
+                    title="How I think about building software"
+                    description="I care about useful products, clear systems, and design decisions that make software easier to trust and use."
+                />
 
-                    <div className="grid gap-6 md:grid-cols-2">
-                        <div className="rounded-2xl border border-slate-200/80 bg-white/80 p-6 shadow-[0_10px_30px_rgba(15,23,42,0.04)]">
-                            <h3 className="text-lg font-semibold text-slate-900">Interests</h3>
-                            <ul className="mt-4 space-y-2 text-slate-600">
-                                {profile.interests.map((item) => (
-                                    <li key={item}>- {item}</li>
-                                ))}
-                            </ul>
-                        </div>
+                <div className="mt-12 grid gap-6 md:grid-cols-2">
+                    <div className="rounded-2xl border border-border bg-card p-8 transition-all hover:border-accent hover:shadow-lg">
+                        <h3 className="text-xl font-semibold text-foreground">Interests</h3>
+                        <ul className="mt-6 space-y-3">
+                            {profile.interests.map((item) => (
+                                <li key={item} className="flex items-center gap-3 text-muted-foreground">
+                                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
-                        <div className="rounded-2xl border border-slate-200/80 bg-white/80 p-6 shadow-[0_10px_30px_rgba(15,23,42,0.04)]">
-                            <h3 className="text-lg font-semibold text-slate-900">Philosophy</h3>
-                            <p className="mt-4 leading-7 text-slate-600">{profile.philosophy}</p>
-                        </div>
+                    <div className="rounded-2xl border border-border bg-gradient-to-br from-accent/5 to-card p-8 transition-all hover:shadow-lg">
+                        <h3 className="text-xl font-semibold text-foreground">Philosophy</h3>
+                        <blockquote className="mt-6 border-l-2 border-accent pl-6">
+                            <p className="text-lg italic leading-relaxed text-muted-foreground">
+                                &ldquo;{profile.philosophy}&rdquo;
+                            </p>
+                        </blockquote>
                     </div>
                 </div>
             </Section>

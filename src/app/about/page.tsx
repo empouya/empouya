@@ -1,6 +1,7 @@
 import Section from "@/components/sections/Section";
 import { profile } from "@/content/site/profile";
 import SectionHeading from "@/components/ui/SectionHeading";
+import FadeIn from "@/components/animations/FadeIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,84 +10,119 @@ export const metadata: Metadata = {
         "Learn more about Eid Mohammad Ahmadi, a Full Stack Engineer focused on Python, React, and scalable systems.",
 };
 
-
 export default function AboutPage() {
     return (
-        <Section>
-            <div className="max-w-5xl space-y-12">
-                <SectionHeading
-                    eyebrow="About"
-                    title="Engineering scalable applications with Python, React, and AI-focused thinking"
-                    description={profile.cv.summary}
-                />
+        <main>
+            <FadeIn>
+                <Section>
+                    <div className="max-w-4xl">
+                        <SectionHeading
+                            eyebrow="About"
+                            title="Engineering scalable applications with Python, React, and AI-focused thinking"
+                            description={profile.cv.summary}
+                        />
 
-                <div className="grid gap-10 lg:grid-cols-[1.3fr_0.7fr]">
-                    <div className="space-y-4 text-slate-700">
-                        {profile.about.map((paragraph) => (
-                            <p key={paragraph} className="leading-8">
-                                {paragraph}
-                            </p>
-                        ))}
-                    </div>
-
-                    <div className="rounded-2xl border border-slate-200/80 bg-white/80 p-6 shadow-[0_10px_30px_rgba(15,23,42,0.04)]">
-                        <h2 className="text-lg font-semibold text-slate-900">Working Style</h2>
-                        <div className="mt-4 flex flex-wrap gap-2">
-                            {profile.traits.map((trait) => (
-                                <span
-                                    key={trait}
-                                    className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-700"
-                                >
-                                    {trait}
-                                </span>
+                        {/* About paragraphs */}
+                        <div className="mt-12 space-y-6 text-muted-foreground leading-relaxed">
+                            {profile.about.map((paragraph, index) => (
+                                <p key={index}>{paragraph}</p>
                             ))}
                         </div>
                     </div>
-                </div>
+                </Section>
+            </FadeIn>
 
-                <div>
+            {/* Working Style */}
+            <FadeIn>
+                <Section className="border-t border-border">
+                    <div className="grid gap-8 lg:grid-cols-2">
+                        <div className="rounded-2xl border border-border bg-card p-8">
+                            <h2 className="text-xl font-semibold text-foreground">Working Style</h2>
+                            <div className="mt-6 flex flex-wrap gap-2">
+                                {profile.traits.map((trait) => (
+                                    <span
+                                        key={trait}
+                                        className="rounded-full border border-border bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground"
+                                    >
+                                        {trait}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="rounded-2xl border border-border bg-card p-8">
+                            <h2 className="text-xl font-semibold text-foreground">Soft Skills</h2>
+                            <div className="mt-6 flex flex-wrap gap-2">
+                                {profile.cv.softSkills.map((skill) => (
+                                    <span
+                                        key={skill}
+                                        className="rounded-full border border-border bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground"
+                                    >
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </Section>
+            </FadeIn>
+
+            {/* Technical Skills */}
+            <FadeIn>
+                <Section className="border-t border-border">
                     <SectionHeading eyebrow="Skills" title="Technical Profile" />
-                    <div className="mt-8 grid gap-6">
+                    <div className="mt-8 grid gap-4 md:grid-cols-2">
                         {profile.cv.detailedSkills.map((skill) => (
                             <div
                                 key={skill.label}
-                                className="rounded-2xl border border-slate-200/80 bg-white/80 p-5 shadow-[0_10px_30px_rgba(15,23,42,0.04)]"
+                                className="rounded-2xl border border-border bg-card p-6 transition-all hover:border-accent hover:shadow-md"
                             >
-                                <h3 className="text-lg font-semibold text-slate-900">{skill.label}</h3>
-                                <p className="mt-2 text-slate-600">{skill.value}</p>
+                                <h3 className="text-sm font-semibold uppercase tracking-[0.15em] text-accent">
+                                    {skill.label}
+                                </h3>
+                                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{skill.value}</p>
                             </div>
                         ))}
                     </div>
-                </div>
+                </Section>
+            </FadeIn>
 
-                <div className="grid gap-6 md:grid-cols-3">
-                    <div className="rounded-2xl border border-slate-200/80 bg-white/80 p-5 shadow-[0_10px_30px_rgba(15,23,42,0.04)]">
-                        <h2 className="text-lg font-semibold text-slate-900">Education</h2>
-                        <p className="mt-3 text-slate-700">{profile.cv.education.degree}</p>
-                        <p className="mt-1 text-slate-600">{profile.cv.education.school}</p>
-                        <p className="mt-1 text-slate-600">{profile.cv.education.date}</p>
-                        <p className="mt-2 text-slate-600">{profile.cv.education.details}</p>
-                    </div>
+            {/* Education & Languages */}
+            <FadeIn>
+                <Section className="border-t border-border">
+                    <div className="grid gap-6 md:grid-cols-3">
+                        <div className="rounded-2xl border border-border bg-card p-6">
+                            <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-accent">
+                                Education
+                            </h2>
+                            <p className="mt-4 text-lg font-semibold text-foreground">{profile.cv.education.degree}</p>
+                            <p className="mt-1 text-sm text-muted-foreground">{profile.cv.education.school}</p>
+                            <p className="mt-1 text-sm text-muted-foreground">{profile.cv.education.date}</p>
+                            <p className="mt-3 text-sm text-muted-foreground">{profile.cv.education.details}</p>
+                        </div>
 
-                    <div className="rounded-2xl border border-slate-200/80 bg-white/80 p-5 shadow-[0_10px_30px_rgba(15,23,42,0.04)]">
-                        <h2 className="text-lg font-semibold text-slate-900">Languages</h2>
-                        <ul className="mt-3 space-y-2 text-slate-600">
-                            {profile.cv.languages.map((item) => (
-                                <li key={item}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
+                        <div className="rounded-2xl border border-border bg-card p-6">
+                            <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-accent">
+                                Languages
+                            </h2>
+                            <ul className="mt-4 space-y-2">
+                                {profile.cv.languages.map((item) => (
+                                    <li key={item} className="text-foreground">{item}</li>
+                                ))}
+                            </ul>
+                        </div>
 
-                    <div className="rounded-2xl border border-slate-200/80 bg-white/80 p-5 shadow-[0_10px_30px_rgba(15,23,42,0.04)]">
-                        <h2 className="text-lg font-semibold text-slate-900">Soft Skills</h2>
-                        <ul className="mt-3 space-y-2 text-slate-600">
-                            {profile.cv.softSkills.map((item) => (
-                                <li key={item}>{item}</li>
-                            ))}
-                        </ul>
+                        <div className="rounded-2xl border border-border bg-gradient-to-br from-accent/10 to-card p-6">
+                            <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-accent">
+                                Availability
+                            </h2>
+                            <p className="mt-4 text-lg font-semibold text-foreground">{profile.availability.status}</p>
+                            <p className="mt-1 text-sm text-muted-foreground">{profile.availability.type}</p>
+                            <p className="mt-3 text-sm text-muted-foreground">{profile.contact.location}</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </Section>
+                </Section>
+            </FadeIn>
+        </main>
     );
 }

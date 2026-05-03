@@ -6,19 +6,39 @@ export const dynamic = "force-static";
 const siteUrl = "https://empouya.github.io";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const staticRoutes = ["", "/projects", "/about", "/contact"].map((route) => ({
-        url: `${siteUrl}${route}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: route === "" ? 1 : 0.8,
-    }));
+    const staticPages = [
+        {
+            url: siteUrl,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 1,
+        },
+        {
+            url: `${siteUrl}/about`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.8,
+        },
+        {
+            url: `${siteUrl}/projects`,
+            lastModified: new Date(),
+            changeFrequency: "weekly" as const,
+            priority: 0.9,
+        },
+        {
+            url: `${siteUrl}/contact`,
+            lastModified: new Date(),
+            changeFrequency: "monthly" as const,
+            priority: 0.7,
+        },
+    ];
 
-    const projectRoutes = projects.map((project) => ({
+    const projectPages = projects.map((project) => ({
         url: `${siteUrl}/projects/${project.slug}`,
         lastModified: new Date(),
         changeFrequency: "monthly" as const,
-        priority: 0.7,
+        priority: 0.6,
     }));
 
-    return [...staticRoutes, ...projectRoutes];
+    return [...staticPages, ...projectPages];
 }

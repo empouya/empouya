@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { MenuIcon, XIcon } from "@/components/ui/icons";
 
 type MobileMenuProps = {
@@ -10,46 +11,80 @@ type MobileMenuProps = {
 
 export default function MobileMenu({ links }: MobileMenuProps) {
     const [open, setOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        if (!open) return;
+        setMounted(true);
+    }, []);
 
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+        function handleDesktopChange(event: MediaQueryListEvent) {
+            if (event.matches) {
+                setOpen(false);
+            }
+        }
+
+        mediaQuery.addEventListener("change", handleDesktopChange);
+
+        return () => {
+            mediaQuery.removeEventListener("change", handleDesktopChange);
+        };
+    }, []);
+
+    useEffect(() => {
         const previousOverflow = document.body.style.overflow;
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = open ? "hidden" : "";
 
         return () => {
             document.body.style.overflow = previousOverflow;
         };
     }, [open]);
 
-    return (
-        <div className="md:hidden">
-            <button
-                type="button"
-                onClick={() => setOpen((current) => !current)}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-accent"
-                aria-expanded={open}
-                aria-label="Toggle navigation menu"
-            >
-                {open ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
-            </button>
+    const menuOverlay =
+        mounted && open
+            ? createPortal(
+                <div className="fixed inset-0 z-[100] md:hidden">
+                    <div
+                        className="absolute inset-0 bg-black/50"
+                        onClick={() => setOpen(false)}
+                        aria-hidden="true"
+                    />
+                    <div className="absolute inset-x-0 top-16 bottom-0 bg-white dark:bg-neutral-950 shadow-2xl">
+                        <nav className="flex h-full flex-col px-6 py-6">
+                            {links.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={() => setOpen(false)}
+                                    className="border-b border-border py-4 text-lg font-medium text-black transition-colors hover:text-blue-600 dark:text-white dark:hover:text-blue-400"
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </nav>
+                    </div>
+                </div>,
+                document.body
+            )
+            : null;
 
-            {open && (
-                <div className="fixed inset-0 top-[65px] z-50 bg-background/98 backdrop-blur-sm">
-                    <nav className="flex flex-col p-6">
-                        {links.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                onClick={() => setOpen(false)}
-                                className="border-b border-border py-4 text-lg font-medium transition-colors hover:text-accent"
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
-                    </nav>
-                </div>
-            )}
-        </div>
+    return (
+        <>
+            <div className="md:hidden">
+                <button
+                    type="button"
+                    onClick={() => setOpen((current) => !current)}
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-accent"
+                    aria-expanded={open}
+                    aria-label="Toggle navigation menu"
+                >
+                    {open ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+                </button>
+            </div>
+
+            {menuOverlay}
+        </>
     );
 }

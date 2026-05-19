@@ -1,26 +1,17 @@
+import type { Project } from "@/content/types";
 import project1 from "./data/project1.json";
 import project2 from "./data/project2.json";
 import project3 from "./data/project3.json";
+import project4 from "./data/project4.json";
 
-export type Project = {
-    id: string;
-    slug: string;
-    title: string;
-    description: string;
-    tech: string[];
-    image: string;
-    github: string;
-    live: string;
-    featured: boolean;
-    results: string[];
-};
+export type { Project };
 
-export const projects: Project[] = [project1, project2, project3];
+export const projects: Project[] = [project1, project2, project3, project4];
 
-export function getFeaturedProjects() {
-    return projects.filter((project) => project.featured);
+export function getFeaturedProjects(): Project[] {
+    return projects.filter((p) => p.featured);
 }
 
-export function getProjectBySlug(slug: string) {
-    return projects.find((project) => project.slug === slug);
+export function getProjectBySlug(slug: string): Project | undefined {
+    return projects.find((p) => p.slug === slug);
 }

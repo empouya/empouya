@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Project } from "@/lib/projects";
+import type { Project } from "@/content/types";
 import { ArrowRightIcon, GithubIcon, ExternalLinkIcon } from "@/components/ui/icons";
 
 type ProjectCardProps = {

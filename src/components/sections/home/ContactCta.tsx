@@ -2,7 +2,7 @@ import Link from "next/link";
 import Section from "@/components/sections/Section";
 import FadeIn from "@/components/animations/FadeIn";
 import { ArrowRightIcon, MailIcon } from "@/components/ui/icons";
-import { profile } from "@/content/site/profile";
+import { contact } from "@/content/site";
 
 export default function ContactCta() {
     return (
@@ -35,10 +35,10 @@ export default function ContactCta() {
                                 <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                             </Link>
                             <a
-                                href={`mailto:${profile.contact.email}`}
+                                href={`mailto:${contact.email}`}
                                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:-translate-y-0.5 hover:border-accent hover:text-accent"
                             >
-                                {profile.contact.email}
+                                {contact.email}
                             </a>
                         </div>
                     </div>

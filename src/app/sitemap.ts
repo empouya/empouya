@@ -1,9 +1,8 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/lib/projects";
+import { siteUrl } from "@/lib/config";
+import { projects } from "@/content/projects";
 
 export const dynamic = "force-static";
-
-const siteUrl = "https://empouya.github.io";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const staticPages = [

@@ -1,5 +1,5 @@
 import Section from "@/components/sections/Section";
-import { profile } from "@/content/site/profile";
+import { interests, philosophy } from "@/content/site";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animations/FadeIn";
 
@@ -17,7 +17,7 @@ export default function PersonalityPreview() {
                     <div className="rounded-2xl border border-border bg-card p-8 transition-all hover:border-accent hover:shadow-lg">
                         <h3 className="text-xl font-semibold text-foreground">Interests</h3>
                         <ul className="mt-6 space-y-3">
-                            {profile.interests.map((item) => (
+                            {interests.map((item) => (
                                 <li key={item} className="flex items-center gap-3 text-muted-foreground">
                                     <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                                     {item}
@@ -30,7 +30,7 @@ export default function PersonalityPreview() {
                         <h3 className="text-xl font-semibold text-foreground">Philosophy</h3>
                         <blockquote className="mt-6 border-l-2 border-accent pl-6">
                             <p className="text-lg italic leading-relaxed text-muted-foreground">
-                                &ldquo;{profile.philosophy}&rdquo;
+                                &ldquo;{philosophy}&rdquo;
                             </p>
                         </blockquote>
                     </div>

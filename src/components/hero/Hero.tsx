@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Section from "@/components/sections/Section";
-import { profile } from "@/content/site/profile";
+import { profile } from "@/content/site";
+import { contact, availability } from "@/content/site";
 import { ArrowRightIcon, GithubIcon, LinkedinIcon } from "@/components/ui/icons";
 
 export default function Hero() {
@@ -29,7 +30,7 @@ export default function Hero() {
                                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
                                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
                             </span>
-                            {profile.availability.status}
+                            {availability.status}
                         </span>
                     </motion.div>
 
@@ -89,7 +90,7 @@ export default function Hero() {
                         className="mt-8 flex items-center gap-4"
                     >
                         <a
-                            href={profile.contact.github}
+                            href={contact.github}
                             target="_blank"
                             rel="noreferrer"
                             className="text-muted-foreground transition-colors hover:text-foreground"
@@ -98,7 +99,7 @@ export default function Hero() {
                             <GithubIcon className="h-6 w-6" />
                         </a>
                         <a
-                            href={profile.contact.linkedin}
+                            href={contact.linkedin}
                             target="_blank"
                             rel="noreferrer"
                             className="text-muted-foreground transition-colors hover:text-foreground"
@@ -133,7 +134,7 @@ export default function Hero() {
                         </div>
                         <div className="col-span-2 rounded-2xl border border-border bg-card p-6 shadow-sm">
                             <p className="text-sm font-medium text-muted-foreground">Location</p>
-                            <p className="mt-1 text-lg font-semibold text-foreground">{profile.contact.location}</p>
+                            <p className="mt-1 text-lg font-semibold text-foreground">{contact.location}</p>
                         </div>
                     </div>
                 </motion.div>

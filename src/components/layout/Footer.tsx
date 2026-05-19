@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/ui/layout/Container";
-import { profile } from "@/content/site/profile";
+import { profile } from "@/content/site";
+import { contact } from "@/content/site";
 import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/ui/icons";
 
 export default function Footer() {
@@ -13,13 +14,13 @@ export default function Footer() {
                             {profile.name}
                         </Link>
                         <p className="text-sm text-muted-foreground">
-                            {profile.role} based in {profile.contact.location}
+                            {profile.role} based in {contact.location}
                         </p>
                     </div>
 
                     <div className="flex items-center gap-4">
                         <a
-                            href={profile.contact.github}
+                            href={contact.github}
                             target="_blank"
                             rel="noreferrer"
                             className="flex h-10 w-10 items-center justify-center rounded-full border border-border transition-colors hover:border-accent hover:text-accent"
@@ -28,7 +29,7 @@ export default function Footer() {
                             <GithubIcon className="h-5 w-5" />
                         </a>
                         <a
-                            href={profile.contact.linkedin}
+                            href={contact.linkedin}
                             target="_blank"
                             rel="noreferrer"
                             className="flex h-10 w-10 items-center justify-center rounded-full border border-border transition-colors hover:border-accent hover:text-accent"
@@ -37,7 +38,7 @@ export default function Footer() {
                             <LinkedinIcon className="h-5 w-5" />
                         </a>
                         <a
-                            href={`mailto:${profile.contact.email}`}
+                            href={`mailto:${contact.email}`}
                             className="flex h-10 w-10 items-center justify-center rounded-full border border-border transition-colors hover:border-accent hover:text-accent"
                             aria-label="Email"
                         >

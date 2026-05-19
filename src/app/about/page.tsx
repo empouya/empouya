@@ -1,5 +1,10 @@
 import Section from "@/components/sections/Section";
-import { profile } from "@/content/site/profile";
+import { profile } from "@/content/site";
+import { about, interests, philosophy } from "@/content/site";
+import { detailedSkills } from "@/content/site";
+import { education, languages } from "@/content/site";
+import { availability } from "@/content/site";
+import { contact } from "@/content/site";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import type { Metadata } from "next";
@@ -19,12 +24,12 @@ export default function AboutPage() {
                         <SectionHeading
                             eyebrow="About"
                             title="Engineering scalable applications with Python, React, and AI-focused thinking"
-                            description={profile.cv.summary}
+                            description={profile.tagline}
                         />
 
                         {/* About paragraphs */}
                         <div className="mt-12 space-y-6 text-muted-foreground leading-relaxed">
-                            {profile.about.map((paragraph, index) => (
+                            {about.map((paragraph, index) => (
                                 <p key={index}>{paragraph}</p>
                             ))}
                         </div>
@@ -53,7 +58,7 @@ export default function AboutPage() {
                         <div className="rounded-2xl border border-border bg-card p-8">
                             <h2 className="text-xl font-semibold text-foreground">Soft Skills</h2>
                             <div className="mt-6 flex flex-wrap gap-2">
-                                {profile.cv.softSkills.map((skill) => (
+                                {profile.traits.map((skill) => (
                                     <span
                                         key={skill}
                                         className="rounded-full border border-border bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground"
@@ -72,7 +77,7 @@ export default function AboutPage() {
                 <Section className="border-t border-border">
                     <SectionHeading eyebrow="Skills" title="Technical Profile" />
                     <div className="mt-8 grid gap-4 md:grid-cols-2">
-                        {profile.cv.detailedSkills.map((skill) => (
+                        {detailedSkills.map((skill) => (
                             <div
                                 key={skill.label}
                                 className="rounded-2xl border border-border bg-card p-6 transition-all hover:border-accent hover:shadow-md"
@@ -95,10 +100,10 @@ export default function AboutPage() {
                             <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-accent">
                                 Education
                             </h2>
-                            <p className="mt-4 text-lg font-semibold text-foreground">{profile.cv.education.degree}</p>
-                            <p className="mt-1 text-sm text-muted-foreground">{profile.cv.education.school}</p>
-                            <p className="mt-1 text-sm text-muted-foreground">{profile.cv.education.date}</p>
-                            <p className="mt-3 text-sm text-muted-foreground">{profile.cv.education.details}</p>
+                            <p className="mt-4 text-lg font-semibold text-foreground">{education.degree}</p>
+                            <p className="mt-1 text-sm text-muted-foreground">{education.school}</p>
+                            <p className="mt-1 text-sm text-muted-foreground">{education.date}</p>
+                            <p className="mt-3 text-sm text-muted-foreground">{education.details}</p>
                         </div>
 
                         <div className="rounded-2xl border border-border bg-card p-6">
@@ -106,7 +111,7 @@ export default function AboutPage() {
                                 Languages
                             </h2>
                             <ul className="mt-4 space-y-2">
-                                {profile.cv.languages.map((item) => (
+                                {languages.map((item) => (
                                     <li key={item} className="text-foreground">{item}</li>
                                 ))}
                             </ul>
@@ -116,9 +121,9 @@ export default function AboutPage() {
                             <h2 className="text-sm font-semibold uppercase tracking-[0.15em] text-accent">
                                 Availability
                             </h2>
-                            <p className="mt-4 text-lg font-semibold text-foreground">{profile.availability.status}</p>
-                            <p className="mt-1 text-sm text-muted-foreground">{profile.availability.type}</p>
-                            <p className="mt-3 text-sm text-muted-foreground">{profile.contact.location}</p>
+                            <p className="mt-4 text-lg font-semibold text-foreground">{availability.status}</p>
+                            <p className="mt-1 text-sm text-muted-foreground">{availability.type}</p>
+                            <p className="mt-3 text-sm text-muted-foreground">{contact.location}</p>
                         </div>
                     </div>
                 </Section>

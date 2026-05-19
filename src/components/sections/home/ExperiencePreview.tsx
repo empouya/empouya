@@ -1,11 +1,10 @@
 import Section from "@/components/sections/Section";
-import { profile } from "@/content/site/profile";
+import { experience } from "@/content/site";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import { CheckCircleIcon } from "@/components/ui/icons";
 
 export default function ExperiencePreview() {
-    const { experience } = profile.cv;
 
     return (
         <FadeIn>

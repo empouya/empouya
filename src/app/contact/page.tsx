@@ -1,5 +1,6 @@
 import Section from "@/components/sections/Section";
-import { profile } from "@/content/site/profile";
+import { profile } from "@/content/site";
+import { contact, availability } from "@/content/site";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import { GithubIcon, LinkedinIcon, MailIcon, MapPinIcon } from "@/components/ui/icons";
@@ -31,7 +32,7 @@ export default function ContactPage() {
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                         {/* Email */}
                         <a
-                            href={`mailto:${profile.contact.email}`}
+                            href={`mailto:${contact.email}`}
                             className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-accent hover:shadow-lg"
                         >
                             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
@@ -41,7 +42,7 @@ export default function ContactPage() {
                                 Email
                             </p>
                             <p className="mt-2 text-foreground break-all group-hover:text-accent transition-colors">
-                                {profile.contact.email}
+                                {contact.email}
                             </p>
                         </a>
 
@@ -53,12 +54,12 @@ export default function ContactPage() {
                             <p className="mt-4 text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground">
                                 Location
                             </p>
-                            <p className="mt-2 text-foreground">{profile.contact.location}</p>
+                            <p className="mt-2 text-foreground">{contact.location}</p>
                         </div>
 
                         {/* LinkedIn */}
                         <a
-                            href={profile.contact.linkedin}
+                            href={contact.linkedin}
                             target="_blank"
                             rel="noreferrer"
                             className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-accent hover:shadow-lg"
@@ -76,7 +77,7 @@ export default function ContactPage() {
 
                         {/* GitHub */}
                         <a
-                            href={profile.contact.github}
+                            href={contact.github}
                             target="_blank"
                             rel="noreferrer"
                             className="group rounded-2xl border border-border bg-card p-6 transition-all hover:border-accent hover:shadow-lg"
@@ -103,10 +104,10 @@ export default function ContactPage() {
                             Ready to work together?
                         </h2>
                         <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                            I&apos;m currently {profile.availability.status.toLowerCase()} and available for {profile.availability.type.toLowerCase()}.
+                            I&apos;m currently {availability.status.toLowerCase()} and available for {availability.type.toLowerCase()}.
                         </p>
                         <a
-                            href={`mailto:${profile.contact.email}`}
+                            href={`mailto:${contact.email}`}
                             className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:-translate-y-0.5 hover:shadow-xl"
                         >
                             <MailIcon className="h-5 w-5" />

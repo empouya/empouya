@@ -19,6 +19,9 @@ export default function ProjectsPageClient() {
         if (selected === "python") return project.tech.some(t =>
             ["Python", "Django", "FastAPI"].includes(t)
         );
+        if (selected === "java") return project.tech.some(t =>
+            ["Java", "WebSockets"].includes(t)
+        );
         return true;
     });
 

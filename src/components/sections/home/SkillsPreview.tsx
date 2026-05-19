@@ -1,15 +1,15 @@
 import Section from "@/components/sections/Section";
-import { profile } from "@/content/site/profile";
+import { skills } from "@/content/site";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import { CodeIcon } from "@/components/ui/icons";
 
 export default function SkillsPreview() {
     const groups = [
-        { title: "Frontend", items: profile.skills.frontend, color: "text-blue-500" },
-        { title: "Backend", items: profile.skills.backend, color: "text-green-500" },
-        { title: "Tools & DevOps", items: profile.skills.tools, color: "text-purple-500" },
-        { title: "AI & Data", items: profile.skills.ai, color: "text-orange-500" },
+        { title: "Frontend", items: skills.frontend, color: "text-blue-500" },
+        { title: "Backend", items: skills.backend, color: "text-green-500" },
+        { title: "Tools & DevOps", items: skills.tools, color: "text-purple-500" },
+        { title: "AI & Data", items: skills.ai, color: "text-orange-500" },
     ];
 
     return (

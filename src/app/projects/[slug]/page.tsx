@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { getProjectBySlug, projects } from "@/lib/projects";
+import { getProjectBySlug, projects } from "@/content/projects";
 import { notFound } from "next/navigation";
+import { siteUrl } from "@/lib/config";
 import Section from "@/components/sections/Section";
 import ProjectDetail from "@/components/projects/ProjectDetail";
-
-const siteUrl = "https://empouya.github.io";
 
 export function generateStaticParams() {
     return projects.map((project) => ({

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Section from "@/components/sections/Section";
-import { profile } from "@/content/site/profile";
+import { profile } from "@/content/site";
 import SectionHeading from "@/components/ui/SectionHeading";
 import FadeIn from "@/components/animations/FadeIn";
 import { ArrowRightIcon } from "@/components/ui/icons";

@@ -76,7 +76,6 @@ export const profile = {
         contactLines: [
             [
                 { type: "text", value: "empouya03@gmail.com" },
-                { type: "text", value: "+34 604 285 641" },
                 {
                     type: "link",
                     label: "linkedin.com/in/empouya/",

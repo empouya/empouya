@@ -42,15 +42,18 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                     <GithubIcon className="h-5 w-5" />
                     View Source
                 </a>
-                <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-lg"
-                >
-                    <ExternalLinkIcon className="h-5 w-5" />
-                    Live Demo
-                </a>
+                {project.live && (
+                    <a
+
+                        href={project.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                    >
+                        <ExternalLinkIcon className="h-5 w-5" />
+                        Live Demo
+                    </a>
+                )}
             </div>
 
             {/* Tech Stack */}

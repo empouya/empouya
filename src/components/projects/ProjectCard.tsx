@@ -27,15 +27,18 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     >
                         <GithubIcon className="h-5 w-5" />
                     </a>
-                    <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border transition-colors hover:border-accent hover:text-accent"
-                        aria-label="View live demo"
-                    >
-                        <ExternalLinkIcon className="h-5 w-5" />
-                    </a>
+
+                    {project.live && (
+                        <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex h-12 w-12 items-center justify-center rounded-full bg-card border border-border transition-colors hover:border-accent hover:text-accent"
+                            aria-label="View live demo"
+                        >
+                            <ExternalLinkIcon className="h-5 w-5" />
+                        </a>
+                    )}
                 </div>
             </div>
 

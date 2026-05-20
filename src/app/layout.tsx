@@ -68,6 +68,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  other: {
+    "referrer": "strict-origin-when-cross-origin",
+  },
 };
 
 export default function RootLayout({
@@ -92,6 +95,7 @@ export default function RootLayout({
             `,
           }}
         />
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider>

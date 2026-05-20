@@ -40,7 +40,7 @@ export async function generateMetadata({
             type: "article",
             images: [
                 {
-                    url: "/seo/og-default.jpg",
+                    url: project.ogImage ?? "/seo/og-default.jpg",
                     width: 1200,
                     height: 630,
                     alt: `${project.title} preview`,
@@ -51,7 +51,7 @@ export async function generateMetadata({
             card: "summary_large_image",
             title: project.title,
             description: project.description,
-            images: ["/seo/og-default.jpg"],
+            images: [project.ogImage ?? "/seo/og-default.jpg"],
         },
     };
 }

@@ -74,4 +74,5 @@ export type Project = {
     live: string;
     featured: boolean;
     results: string[];
+    ogImage?: string;
 };

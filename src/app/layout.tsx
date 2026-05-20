@@ -79,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -98,9 +98,16 @@ export default function RootLayout({
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <ThemeProvider>
           <Navbar />
-          <PageTransition>{children}</PageTransition>
+          <PageTransition>
+            <div id="main-content">
+              {children}
+            </div>
+          </PageTransition>
           <Footer />
         </ThemeProvider>
       </body>

@@ -3,8 +3,7 @@ import type { Profile } from "@/content/types";
 export const profile: Profile = {
     name: "EID MOHAMMAD AHMADI",
     role: "Backend / Full Stack Engineer",
-    headline: "I design and build scalable backend systems and data-driven applications",
-    tagline:
+    headline: "I build backends that stay trustworthy under load — Django REST APIs, event-driven microservices, and data pipelines built for production.", tagline:
         "Backend-focused Engineer (Python, Django, React) specializing in scalable systems, API design, and data-intensive applications.",
     shortIntro:
         "Backend-focused Full Stack Engineer with strong experience in Python and React, building scalable systems, structured APIs, and data-driven applications.",

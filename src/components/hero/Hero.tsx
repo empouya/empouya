@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Section from "@/components/sections/Section";
 import { profile } from "@/content/site";
 import { contact, availability } from "@/content/site";
-import { ArrowRightIcon, GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { ArrowRightIcon, GithubIcon, LinkedinIcon, DownloadIcon } from "@/components/ui/icons";
 
 export default function Hero() {
     return (
@@ -81,6 +81,16 @@ export default function Hero() {
                         >
                             Contact Me
                         </Link>
+                        <a
+                            href="/resume/resume.pdf"
+                            download
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 text-sm font-semibold text-accent transition-all hover:-translate-y-0.5 hover:bg-accent hover:text-accent-foreground"
+                        >
+                            <DownloadIcon className="h-4 w-4" />
+                            Download CV
+                        </a>
                     </motion.div>
 
                     <motion.div
@@ -139,6 +149,6 @@ export default function Hero() {
                     </div>
                 </motion.div>
             </div>
-        </Section>
+        </Section >
     );
 }

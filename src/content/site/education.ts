@@ -1,7 +1,7 @@
 import type { Education } from "@/content/types";
 
 export const education: Education = {
-    degree: "BSC OF COMPUTER ENGINEERING",
+    degree: "Bachelor of Science in Computer Engineering",
     date: "JUN 2025",
     school: "Amirkabir University of Technology",
     details: "National Rank: 188 | Merit Scholarship",

@@ -3,32 +3,32 @@ import type { Experience } from "@/content/types";
 export const experience: Experience = {
     role: "Backend / Full Stack Developer",
     company: "Independent Projects",
-    date: "2022 - Present",
+    date: "2020 - Present",
     bullets: [
-        "Designed and developed full-stack applications with a strong focus on backend systems using Python (Django, DRF) and React",
-        "Built scalable REST APIs with structured data models, authentication, and clear business logic separation",
-        "Designed systems with modular architecture and explicit domain boundaries to improve maintainability and scalability",
-        "Worked on data-intensive and AI-related projects involving machine learning, data pipelines, and algorithmic problem solving",
-        "Implemented asynchronous and event-driven patterns in backend systems to simulate scalable service interactions",
-        "Developed responsive frontend interfaces and integrated them with backend services for complete feature delivery",
-        "Containerized applications using Docker and applied deployment and environment configuration practices",
-        "Collaborated in iterative development cycles, improving system design, code quality, and feature robustness",
+        "Designed and engineered maintainable backend system architectures using Python and Django/FastAPI, utilizing explicit service layers to lower long-term technical debt",
+        "Optimized relational database layers (PostgreSQL/MySQL) via custom transactional patterns, rigorous indexing strategies, and execution plan optimization to handle multi-user concurrent scaling",
+        "Implemented secure API layers featuring JWT authentication, social login (OAuth), and fine-grained role-based access control (RBAC)",
+        "Integrated payment processing networks, building custom gateway logic (Stripe) and webhook managers to ensure transactional reliability",
+        "Configured infrastructure environments on Linux servers using Nginx as a reverse proxy and load balancer, with Docker containerization",
+        "Automated software quality workflows by enforcing style guidelines (PEP8/Flake8, ESLint) inside pull-request-driven CI/CD pipelines via GitHub Actions",
+        "Built real-time systems using Django Channels and WebSockets, and async background processing via Celery with Redis",
+        "Implemented full observability stacks using Prometheus instrumentation and Grafana dashboards to monitor latency, throughput, and worker queues",
     ],
     projects: [
         {
             name: "TaskHive",
             description:
-                "Production-style Django REST backend with modular architecture, strong domain modeling, and high test coverage, focused on data integrity and scalability.",
+                "Enterprise-grade Django REST backend with modular architecture, real-time WebSocket support, Celery async processing, Prometheus/Grafana observability, and 92%+ test coverage with sub-100ms P95 latency.",
+        },
+        {
+            name: "Shipping Management System",
+            description:
+                "Enterprise internal logistics platform with high-integrity PostgreSQL transactions, multi-branch RBAC, audit trails, and Stripe payment routing.",
         },
         {
             name: "RideFlow",
             description:
-                "Event-driven backend system simulating distributed services and asynchronous workflows for scalable application design.",
-        },
-        {
-            name: "AI & Data Projects",
-            description:
-                "Implemented machine learning and data processing projects including search algorithms, reinforcement learning, clustering, and neural networks.",
+                "Event-driven distributed backend simulation with asynchronous service isolation, Nginx load balancing, and encrypted service-to-service token validation.",
         },
     ],
 };

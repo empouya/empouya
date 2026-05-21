@@ -1,26 +1,34 @@
 {
     "id": "project-taskhive-backend",
     "slug": "taskhive-backend",
-    "title": "TaskHive — Scalable Task Management Backend",
-    "description": "A production-style backend system for team-based project and task management, designed with strong domain modeling, clean architecture principles, and high test coverage.",
+    "title": "TaskHive — Enterprise-Grade Project Management API",
+    "description": "A production-style enterprise backend system for team-based project and task management, built with a modular monolith architecture, real-time capabilities, async processing, and full observability stack.",
     "tech": [
         "Python",
         "Django",
         "Django REST Framework",
         "PostgreSQL",
-        "Docker",
         "Redis",
-        "Pytest"
+        "Celery",
+        "Django Channels",
+        "Prometheus",
+        "Grafana",
+        "MinIO",
+        "Docker",
+        "Nginx",
+        "Pytest",
+        "Locust"
     ],
     "image": "/projects/taskhive/cover.jpg",
     "github": "https://github.com/empouya/task-hive",
     "live": "",
     "featured": true,
     "results": [
-        "Designed a modular backend architecture with clear domain boundaries (teams, projects, tasks) to ensure scalability and maintainability",
-        "Implemented REST APIs with strict business logic enforcement, role-based access control, and stateless JWT authentication",
-        "Achieved ~96% test coverage with unit and integration tests, ensuring reliability of core business workflows",
-        "Built a production-ready environment using Docker, PostgreSQL, and structured logging with health checks",
-        "Handled complex data relationships and integrity constraints across multi-tenant team-based systems"
+        "Modular monolith architecture with decoupled domain boundaries and a strict service business logic tier, keeping long-term technical debt minimal",
+        "Stateless JWT authentication with social login (Google/GitHub) and fine-grained Role-Based Access Control (RBAC) across multi-tenant team structures",
+        "Optimized PostgreSQL data layer with multi-column indexing, soft-deletion engine, transaction blocks, and Redis-driven cache invalidation — achieving P95 read latency under 100ms",
+        "Real-time WebSocket communication modules via Django Channels alongside Celery async background processing for task notifications and heavy workloads",
+        "Full observability stack with Prometheus metrics instrumentation and Grafana dashboards monitoring latency, throughput, and worker queue health",
+        "92%+ test coverage across 110+ unit and integration tests validated under load with Locust, achieving 0% error rate under simulated concurrent traffic"
     ]
 }
